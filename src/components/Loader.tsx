@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnimationProps, motion, Variants } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 import Image from '../shared/Image';
 
@@ -97,11 +97,11 @@ export const ImageBlock = ({ width, posX, posY, variants, id }: ImageProps) => {
   return (
     <motion.div
       variants={variants}
-      className=""
+      className={`image-block`}
       style={{
         width: `${width}px`,
-        top: `${posY}px`,
-        left: `${posX}px`,
+        top: `${posY}vh`,
+        left: `${posX}vw `,
       }}
     >
       <Image

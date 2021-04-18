@@ -15,7 +15,11 @@ const Header = () => {
       className="header"
     >
       <div className="header-inner">
-        <div className="logo">needwork</div>
+        <div className="logo">
+          <a href="/" className="logo">
+            needwork
+          </a>
+        </div>
         <nav className="nav">
           <li>
             <a href="/product">Product</a>
