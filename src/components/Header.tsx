@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import NextLink from 'next/link';
 
 const Header = () => {
   return (
@@ -17,10 +18,7 @@ const Header = () => {
         <div className="logo">needwork</div>
         <nav className="nav">
           <li>
-            <a href="/design">Mobile Application</a>
-          </li>
-          <li>
-            <a href="/strategy">Strategy</a>
+            <a href="/product">Product</a>
           </li>
           <li>
             <a href="/about">About</a>

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { ExternalLinkIcon } from '@heroicons/react/solid';
 
 const banner = {
   animate: {
     transition: {
       delayChildren: 0.4,
       staggerChildren: 0.1,
+      rotation: 0.02,
     },
   },
 };
@@ -31,9 +33,10 @@ const Banner = () => {
   }, []);
   return (
     <motion.div className="banner" variants={banner}>
-      <BannerRowTop title={'find \n your'} />
+      <motion.div className="banner-bg" animate={{ rotate: 0.2 }} />
+      <BannerRowTop title={'find-your'} />
       <BannerRowCenter title={'workspace'} playMarquee={playMarquee} />
-      <BannerRowBottom title={'now!'} />
+      <BannerRowBottom title={'at-needwork!'} />
     </motion.div>
   );
 };
@@ -55,7 +58,7 @@ const AnimatedLetters = ({ title, disabled = false }: AnimatedLetterProps) => (
         className="row-letter"
         variants={disabled ? undefined : letterAni}
       >
-        {letter}
+        {letter === '-' ? '   ' : letter}
       </motion.span>
     ))}
   </motion.span>
@@ -68,7 +71,7 @@ interface BannerProps {
 const BannerRowTop = ({ title }: BannerProps) => {
   return (
     <div className={'banner-row'}>
-      <div style={{ width: '70%' }} className="row-col">
+      <div style={{ width: '60%' }} className="row-col">
         <AnimatedLetters title={title} />
       </div>
       <motion.div
@@ -81,10 +84,26 @@ const BannerRowTop = ({ title }: BannerProps) => {
         }}
         className="row-col"
       >
-        <span className="row-message">
-          We are specialised in setting up the foundation of your brand and
-          setting you up for success.
-        </span>
+        <div className="row-text-btn">
+          <span className="row-message">
+            We are specialised in finding the best workspace fitting for your
+            use case based in your locals. Check out our new mobile app!
+          </span>
+          <a className="main-btn" style={{ marginTop: '2rem' }}>
+            <ExternalLinkIcon
+              width={24}
+              height={24}
+              style={{
+                position: 'absolute',
+                right: '0',
+                marginRight: '4px',
+                marginTop: '4px',
+              }}
+            />
+            <span className="main-btn-text">Download App</span>
+          </a>
+          <div className="main-btn-box" />
+        </div>
       </motion.div>
     </div>
   );

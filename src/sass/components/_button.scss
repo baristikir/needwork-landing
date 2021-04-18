@@ -1,0 +1,44 @@
+.main-btn {
+  cursor: pointer;
+  display: inline-flex;
+  position: relative;
+  width: 220px;
+  height: 96px;
+  background-color: $bg;
+  border: 2px solid $black;
+  z-index: 4;
+  top: -8px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 1, 1);
+
+  text-decoration: none;
+  color: $black;
+
+  &:hover {
+    transition: background-color 0.2s ease-out;
+    transition: transform 0.4s ease-out;
+    transform: translateY(-10px);
+    background-color: $black;
+    color: $white;
+
+    .main-btn-text {
+      transition: color 0.2s ease-out;
+    }
+  }
+
+  .main-btn-text {
+    position: absolute;
+    bottom: 0;
+    margin: 12px;
+  }
+}
+
+.main-btn-box {
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  z-index: 3;
+  width: 220px;
+  height: 92px;
+  border: 2px solid $black;
+  border-style: dashed;
+}

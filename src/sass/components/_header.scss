@@ -35,6 +35,12 @@
           text-decoration: none;
           color: #24242a;
           white-space: nowrap;
+          transition: color 0.2s ease-in;
+          font-weight: 500;
+
+          &:hover {
+            color: $blue-700;
+          }
         }
       }
     }

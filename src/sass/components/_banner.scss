@@ -1,7 +1,22 @@
 .banner {
   z-index: 100;
   position: relative;
+
+  &-bg {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 440px;
+    height: 440px;
+    opacity: 0.6;
+    border-radius: 200px;
+    filter: blur(100px);
+    background-image: $gradient;
+  }
+
   .banner-row {
+    z-index: 100;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -18,7 +33,7 @@
 
     .row-title,
     .row-letter {
-      font-size: 24rem;
+      font-size: 18rem;
       font-weight: 500;
       position: relative;
       letter-spacing: -0.8rem;
@@ -26,15 +41,21 @@
       white-space: nowrap;
     }
     .row-col {
-      width: 30%;
+      width: 40%;
       display: flex;
       align-content: center;
       justify-content: center;
+      .row-text-btn {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+      }
       .row-message {
         font-weight: 500;
         font-size: 1.8rem;
         line-height: 2.6rem;
-        width: 320px;
+        max-width: 420px;
+        width: 100%;
       }
     }
     .scroll {
