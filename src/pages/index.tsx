@@ -3,6 +3,7 @@ import { AnimatePresence, AnimateSharedLayout, motion } from 'framer-motion';
 import { useState } from 'react';
 import Loader from '../components/Loader';
 import Header from '../components/Header';
+import Banner from '../components/Banner';
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
@@ -23,6 +24,7 @@ export default function Home() {
         ) : (
           <>
             <Header />
+            <Banner />
           </>
         )}
       </AnimatePresence>
