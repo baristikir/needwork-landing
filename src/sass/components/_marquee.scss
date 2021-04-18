@@ -15,13 +15,13 @@ $move-final: calc(-50%);
     animation: marquee 5s linear infinite;
     animation-play-state: paused;
     @media (min-width: $layout-breakpoint-large) {
-      transform: translate3d(calc(-25% + 10vw), 0, 0);
+      transform: translate3d(calc(-25% + 30vw), 0, 0);
       animation: marquee-lg 5s linear infinite;
       animation-play-state: paused;
     }
   }
   .row-title {
-    padding: 0 8vw;
+    padding: 0 18vw;
     @media (min-width: $layout-breakpoint-large) {
       padding: 0 10vw;
     }
