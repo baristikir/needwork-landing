@@ -4,9 +4,12 @@ import { useState } from 'react';
 import Loader from '../components/Loader';
 import Header from '../components/Header';
 import Banner from '../components/Banner';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/dist/client/router';
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
+  const router = useRouter();
 
   useEffect(() => {
     loading
@@ -15,28 +18,34 @@ export default function Home() {
   }, [loading]);
 
   return (
-    <AnimateSharedLayout type="crossfade">
-      <AnimatePresence>
-        {loading ? (
-          <motion.div key="loader">
-            <Loader setLoading={setLoading} />
-          </motion.div>
-        ) : (
-          <>
-            <Header />
-            <Banner />
-            {!loading && (
-              <div className="main-image-parent final">
-                <motion.img
-                  transition={{ ease: [0.6, 0.01, -0.05, 0.9], duration: 1.6 }}
-                  src={`./images/image-2.jpg`}
-                  layoutId={'main-image-1'}
-                />
-              </div>
-            )}
-          </>
-        )}
-      </AnimatePresence>
-    </AnimateSharedLayout>
+    <>
+      <NextSeo title="Home" canonical={router.pathname} />
+      <AnimateSharedLayout type="crossfade">
+        <AnimatePresence>
+          {loading ? (
+            <motion.div key="loader">
+              <Loader setLoading={setLoading} />
+            </motion.div>
+          ) : (
+            <>
+              <Header />
+              <Banner />
+              {!loading && (
+                <div className="main-image-parent final">
+                  <motion.img
+                    transition={{
+                      ease: [0.6, 0.01, -0.05, 0.9],
+                      duration: 1.6,
+                    }}
+                    src={`./images/image-2.jpg`}
+                    layoutId={'main-image-1'}
+                  />
+                </div>
+              )}
+            </>
+          )}
+        </AnimatePresence>
+      </AnimateSharedLayout>
+    </>
   );
 }
