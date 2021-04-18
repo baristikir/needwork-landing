@@ -36,7 +36,7 @@ const Banner = () => {
       <motion.div className="banner-bg" animate={{ rotate: 0.2 }} />
       <BannerRowTop title={'find-your'} />
       <BannerRowCenter title={'workspace'} playMarquee={playMarquee} />
-      <BannerRowBottom title={'at-needwork!'} />
+      <BannerRowBottom title={''} />
     </motion.div>
   );
 };
@@ -71,7 +71,7 @@ interface BannerProps {
 const BannerRowTop = ({ title }: BannerProps) => {
   return (
     <div className={'banner-row'}>
-      <div style={{ width: '60%' }} className="row-col">
+      <div className="row-col title">
         <AnimatedLetters title={title} />
       </div>
       <motion.div

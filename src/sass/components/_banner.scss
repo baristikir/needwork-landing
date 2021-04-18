@@ -9,10 +9,21 @@
     right: 0;
     width: 440px;
     height: 440px;
-    opacity: 0.6;
+    opacity: 0.4;
     border-radius: 200px;
     filter: blur(100px);
     background-image: $gradient;
+
+    @media (min-width: $layout-mobileL) {
+      @media (max-width: $layout-tablet) {
+        width: 320px;
+        height: 320px;
+      }
+    }
+    @media (max-width: $layout-mobileL) {
+      width: 220px;
+      height: 220px;
+    }
   }
 
   .banner-row {
@@ -33,29 +44,81 @@
 
     .row-title,
     .row-letter {
-      font-size: 18rem;
       font-weight: 500;
       position: relative;
       letter-spacing: -0.8rem;
       display: inline-block;
       white-space: nowrap;
+
+      @media (min-width: $layout-laptopS) {
+        font-size: 12rem;
+        letter-spacing: -0.6;
+      }
+      @media (min-width: $layout-tablet) {
+        @media (max-width: $layout-laptopS) {
+          font-size: 11rem;
+          letter-spacing: -0.5rem;
+        }
+      }
+      @media (min-width: $layout-mobileL) {
+        @media (max-width: $layout-tablet) {
+          font-size: 7rem;
+          letter-spacing: -0.4rem;
+        }
+      }
+      @media (min-width: $layout-laptopL) {
+        font-size: 18rem;
+      }
+      @media (max-width: $layout-mobileL) {
+        font-size: 6rem;
+        letter-spacing: -0.2rem;
+      }
     }
     .row-col {
-      width: 40%;
       display: flex;
       align-content: center;
       justify-content: center;
+
+      &.title {
+        @media (min-width: $layout-mobileL) {
+          width: 60%;
+        }
+        @media (max-width: $layout-mobileL) {
+          width: 100%;
+        }
+      }
+
       .row-text-btn {
         position: relative;
         display: flex;
         flex-direction: column;
+        @media (max-width: $layout-mobileL) {
+          width: 0;
+          display: none;
+        }
       }
       .row-message {
         font-weight: 500;
-        font-size: 1.8rem;
-        line-height: 2.6rem;
-        max-width: 420px;
+        line-height: 2.6;
         width: 100%;
+        @media (min-width: $layout-mobileL) {
+          font-size: 1.2rem;
+          line-height: 1.8;
+          max-width: 250px;
+        }
+        @media (min-width: $layout-laptopS) {
+          font-size: 1.4rem;
+          line-height: 2;
+          max-width: 420px;
+        }
+        @media (min-width: $layout-laptopL) {
+          font-size: 1.8rem;
+          line-height: 2;
+        }
+        @media (max-width: $layout-tablet) {
+          display: none;
+          width: 0;
+        }
       }
     }
     .scroll {
@@ -69,10 +132,28 @@
       justify-content: center;
       flex-direction: column;
       left: 160px;
+      bottom: -140px;
+
+      @media (min-width: $layout-mobileL) {
+        @media (max-width: $layout-laptopS) {
+          height: 120px;
+          width: 120px;
+          left: 70px;
+        }
+      }
+      @media (max-width: $layout-mobileL) {
+        height: 80px;
+        width: 80px;
+        left: 20px;
+        top: 190px;
+      }
       span {
         font-size: 18px;
         font-weight: 600;
         margin: 4px 0;
+        @media (max-width: $layout-mobileL) {
+          font-size: 14px;
+        }
       }
     }
   }
@@ -82,7 +163,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  // height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -99,5 +180,14 @@
   img {
     width: 900px;
     display: flex;
+
+    @media (min-width: $layout-mobileL) {
+      @media (max-width: $layout-tablet) {
+        width: 600px;
+      }
+    }
+    @media (max-width: $layout-mobileL) {
+      width: 300px;
+    }
   }
 }

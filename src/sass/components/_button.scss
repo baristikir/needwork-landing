@@ -13,6 +13,17 @@
   text-decoration: none;
   color: $black;
 
+  @media (min-width: $layout-mobileL) {
+    @media (max-width: $layout-tablet) {
+      width: 162px;
+      height: 82px;
+    }
+  }
+  @media (max-width: $layout-mobileL) {
+    width: 132px;
+    height: 62px;
+  }
+
   &:hover {
     transition: background-color 0.2s ease-out;
     transition: transform 0.4s ease-out;
@@ -30,6 +41,11 @@
     font-weight: 500;
     bottom: 0;
     margin: 12px;
+
+    @media (max-width: $layout-mobileL) {
+      font-size: 12px;
+      margin: 6px;
+    }
   }
 }
 
@@ -42,4 +58,15 @@
   height: 92px;
   border: 2px solid $black;
   border-style: dashed;
+
+  @media (min-width: $layout-mobileL) {
+    @media (max-width: $layout-tablet) {
+      width: 162px;
+      height: 82px;
+    }
+  }
+  @media (max-width: $layout-mobileL) {
+    width: 132px;
+    height: 62px;
+  }
 }

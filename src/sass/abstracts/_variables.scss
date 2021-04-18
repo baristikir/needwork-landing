@@ -1,8 +1,9 @@
 // * Breakpoints
-$layout-breakpoint-large: 1920px;
-$layout-breakpoint-medium: 1440px;
-$layout-breakpoint-small: 960px;
-$layout-breakpoint-xsmall: 480px;
+$layout-xxl: 1920px;
+$layout-laptopL: 1440px;
+$layout-laptopS: 960px;
+$layout-tablet: 768px;
+$layout-mobileL: 480px;
 
 // * Fancy Gradient
 $gradient: linear-gradient(132deg, #ff7448 27%, #ff4848 50%, #6248ff 79%);

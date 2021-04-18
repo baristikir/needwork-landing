@@ -12,8 +12,25 @@ body.loading {
       align-items: center;
       justify-content: center;
       img {
-        width: 100%;
         object-fit: fill;
+
+        @media (min-width: $layout-laptopS) {
+          width: 100%;
+        }
+        @media (min-width: $layout-tablet) {
+          @media (max-width: $layout-laptopS) {
+            width: 80%;
+          }
+        }
+        @media (min-width: $layout-mobileL) {
+          @media (max-width: $layout-tablet) {
+            width: 60%;
+          }
+        }
+
+        @media (max-width: $layout-mobileL) {
+          width: 30%;
+        }
       }
     }
   }

@@ -14,7 +14,7 @@ $move-final: calc(-50%);
     transform: translate3d($move-initial, 0, 0);
     animation: marquee 5s linear infinite;
     animation-play-state: paused;
-    @media (min-width: $layout-breakpoint-large) {
+    @media (min-width: $layout-xxl) {
       transform: translate3d(calc(-25% + 30vw), 0, 0);
       animation: marquee-lg 5s linear infinite;
       animation-play-state: paused;
@@ -22,7 +22,7 @@ $move-final: calc(-50%);
   }
   .row-title {
     padding: 0 18vw;
-    @media (min-width: $layout-breakpoint-large) {
+    @media (min-width: $layout-xxl) {
       padding: 0 10vw;
     }
   }
